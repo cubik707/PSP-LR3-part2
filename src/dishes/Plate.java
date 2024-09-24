@@ -1,10 +1,17 @@
 package dishes;
 
-public class Plate extends Dishes {
+import utils.Object;
+
+public abstract class Plate implements Dishes, Object {
+    protected String manufacturer;
+    protected double price;
+    protected String style;
     private double diameter;
 
     public Plate(String manufacturer, double price, String style, double diameter) {
-        super(manufacturer, price, style);
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.style = style;
         this.diameter = diameter;
     }
 
@@ -26,7 +33,12 @@ public class Plate extends Dishes {
     }
 
     @Override
+    public void print() {
+        System.out.println(toString());
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + ", Диаметр: " + diameter;
+        return "Производитель: " + manufacturer + ", Цена: " + price + ", Стиль: " + style + ", Диаметр: " + diameter;
     }
 }
