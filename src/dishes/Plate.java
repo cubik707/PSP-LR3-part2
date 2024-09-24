@@ -28,16 +28,6 @@ public abstract class Plate implements Dishes, Object {
     }
 
     @Override
-    public String getName() {
-        return "Тарелка";
-    }
-
-    @Override
-    public void print() {
-        System.out.println(this);
-    }
-
-    @Override
     public String toString() {
         return "Производитель: " + manufacturer + ", Цена: " + price + ", Стиль: " + style + ", Диаметр: " + diameter;
     }
