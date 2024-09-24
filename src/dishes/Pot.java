@@ -1,11 +1,18 @@
 package dishes;
 
-public class Pot extends Dishes {
+import utils.Object;
+
+public class Pot implements Dishes, Object {
+    private String manufacturer;
+    private double price;
+    private String style;
     private double volume;
     private boolean hasLid;
 
     public Pot(String manufacturer, double price, String style, double volume, boolean hasLid) {
-        super(manufacturer, price, style);
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.style = style;
         this.volume = volume;
         this.hasLid = hasLid;
     }
@@ -32,7 +39,25 @@ public class Pot extends Dishes {
     }
 
     @Override
+    public void print() {
+        System.out.println(toString());
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getStyle() {
+        return style;
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + ", Объем: " + volume + ", Наличие крышки: " + (hasLid ? "Да" : "Нет");
+        return "Производитель: " + manufacturer + ", Цена: " + price + ", Стиль: " + style +
+                ", Объем: " + volume + ", Наличие крышки: " + (hasLid ? "Да" : "Нет");
     }
 }
