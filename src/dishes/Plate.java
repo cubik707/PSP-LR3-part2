@@ -34,7 +34,7 @@ public abstract class Plate implements Dishes, Object {
 
     @Override
     public void print() {
-        System.out.println(toString());
+        System.out.println(this);
     }
 
     @Override
